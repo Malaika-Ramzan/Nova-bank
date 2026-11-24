@@ -1,0 +1,807 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NOVA BANK - Smart Digital Banking and Financial Management System">
+    <title>NOVA BANK | Digital Banking</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">N</div>
+            <div>
+                <h2>NOVA<span>BANK</span></h2>
+                <small>DIGITAL FINANCE</small>
+            </div>
+        </div>
+
+        <div class="menu-heading">MAIN MENU</div>
+
+        <nav class="navigation">
+            <button class="nav-link active" data-page="dashboard">
+                <span>⌂</span> Dashboard
+            </button>
+
+            <button class="nav-link" data-page="transfer">
+                <span>⇄</span> Money Transfer
+            </button>
+
+            <button class="nav-link" data-page="transactions">
+                <span>↗</span> Transactions
+            </button>
+
+            <button class="nav-link" data-page="bills">
+                <span>▤</span> Bill Payments
+            </button>
+
+            <div class="menu-heading secondary-heading">FINANCIAL TOOLS</div>
+
+            <button class="nav-link" data-page="budgets">
+                <span>◫</span> Budget Planner
+            </button>
+
+            <button class="nav-link" data-page="savings">
+                <span>◎</span> Savings Goals
+            </button>
+
+            <button class="nav-link" data-page="cards">
+                <span>▣</span> My Cards
+            </button>
+
+            <div class="menu-heading secondary-heading">ACCOUNT</div>
+
+            <button class="nav-link" data-page="profile">
+                <span>♙</span> My Profile
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="support-card">
+                <div class="support-icon">✦</div>
+                <h3>Need Assistance?</h3>
+                <p>Explore your banking dashboard and manage your finances.</p>
+                <button id="helpBtn">Explore Help →</button>
+            </div>
+
+            <div class="sidebar-footer">NOVA BANK © 2026</div>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+
+                <div>
+                    <div class="breadcrumb">Workspace / <strong id="pageTitle">Dashboard</strong></div>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="notification-btn" id="notificationBtn" aria-label="Notifications">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="user-info">
+                    <div class="avatar">DU</div>
+                    <div>
+                        <strong id="headerName">Demo User</strong>
+                        <small>Personal Account</small>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <div class="content-area">
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <section class="page active" id="dashboard">
+
+                <div class="welcome-row">
+                    <div>
+                        <p class="eyebrow">YOUR FINANCIAL OVERVIEW</p>
+                        <h1>Welcome back, <span id="welcomeName">Demo User</span>!</h1>
+                        <p class="subtext">Here is what's happening with your finances today.</p>
+                    </div>
+
+                    <button class="primary-btn" data-go="transfer">
+                        + New Transfer
+                    </button>
+                </div>
+
+                <!-- BALANCE CARD -->
+                <div class="hero-card">
+
+                    <div class="hero-decoration"></div>
+
+                    <div class="hero-top">
+                        <div>
+                            <span class="hero-label">TOTAL ACCOUNT BALANCE</span>
+
+                            <div class="balance-row">
+                                <h2 id="balance">Rs. 248,500</h2>
+                                <button id="toggleBalance" aria-label="Toggle balance">◉</button>
+                            </div>
+
+                            <span class="balance-caption">Available demo balance</span>
+                        </div>
+
+                        <div class="hero-logo">N</div>
+                    </div>
+
+                    <div class="hero-bottom">
+                        <div>
+                            <small>ACCOUNT HOLDER</small>
+                            <strong id="heroName">DEMO USER</strong>
+                        </div>
+
+                        <div>
+                            <small>ACCOUNT NUMBER</small>
+                            <strong>•••• •••• 4821</strong>
+                        </div>
+
+                        <div>
+                            <small>ACCOUNT TYPE</small>
+                            <strong>PREMIUM SAVINGS</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- STATISTICS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Total Income</span>
+                            <span class="stat-icon income-icon">↙</span>
+                        </div>
+                        <h2 id="incomeTotal">Rs. 97,000</h2>
+                        <small class="positive">Money received</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Total Expenses</span>
+                            <span class="stat-icon expense-icon">↗</span>
+                        </div>
+                        <h2 id="expenseTotal">Rs. 24,800</h2>
+                        <small class="negative">Money spent</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Net Balance</span>
+                            <span class="stat-icon saving-icon">◎</span>
+                        </div>
+                        <h2 id="netTotal">Rs. 248,500</h2>
+                        <small class="positive">Available funds</small>
+                    </div>
+
+                </div>
+
+                <!-- DASHBOARD PANELS -->
+                <div class="dashboard-grid">
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Financial Overview</h3>
+                                <p>Income and expense comparison</p>
+                            </div>
+                            <span class="period-label">DEMO DATA</span>
+                        </div>
+
+                        <div class="chart-legend">
+                            <span><i class="legend-income"></i> Income</span>
+                            <span><i class="legend-expense"></i> Expenses</span>
+                        </div>
+
+                        <div class="chart" aria-label="Illustrative financial comparison chart">
+                            <div class="chart-column">
+                                <div class="bar-pair">
+                                    <div class="bar income-bar" style="height:75%"></div>
+                                    <div class="bar expense-bar" style="height:35%"></div>
+                                </div>
+                                <small>Jan</small>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="bar-pair">
+                                    <div class="bar income-bar" style="height:90%"></div>
+                                    <div class="bar expense-bar" style="height:48%"></div>
+                                </div>
+                                <small>Feb</small>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="bar-pair">
+                                    <div class="bar income-bar" style="height:65%"></div>
+                                    <div class="bar expense-bar" style="height:30%"></div>
+                                </div>
+                                <small>Mar</small>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="bar-pair">
+                                    <div class="bar income-bar" style="height:95%"></div>
+                                    <div class="bar expense-bar" style="height:50%"></div>
+                                </div>
+                                <small>Apr</small>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="bar-pair">
+                                    <div class="bar income-bar" style="height:80%"></div>
+                                    <div class="bar expense-bar" style="height:40%"></div>
+                                </div>
+                                <small>May</small>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="bar-pair">
+                                    <div class="bar income-bar" style="height:100%"></div>
+                                    <div class="bar expense-bar" style="height:42%"></div>
+                                </div>
+                                <small>Jun</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QUICK ACTIONS -->
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Quick Actions</h3>
+                                <p>Manage your finances easily</p>
+                            </div>
+                        </div>
+
+                        <div class="quick-actions">
+                            <button data-go="transfer">
+                                <span>⇄</span>
+                                Transfer Money
+                            </button>
+
+                            <button data-go="bills">
+                                <span>▤</span>
+                                Pay Bills
+                            </button>
+
+                            <button data-go="budgets">
+                                <span>◫</span>
+                                Set Budget
+                            </button>
+
+                            <button data-go="savings">
+                                <span>◎</span>
+                                Save Money
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RECENT TRANSACTIONS -->
+                <div class="panel transaction-panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Recent Transactions</h3>
+                            <p>Your latest account activities</p>
+                        </div>
+
+                        <button class="text-btn" data-go="transactions">
+                            View All →
+                        </button>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>DESCRIPTION</th>
+                                    <th>DATE</th>
+                                    <th>CATEGORY</th>
+                                    <th>AMOUNT</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentRows"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= TRANSFER ================= -->
+
+            <section class="page" id="transfer">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">SEND MONEY SECURELY</p>
+                        <h1>Money <span>Transfer</span></h1>
+                        <p class="subtext">Practice transferring money using your demo account.</p>
+                    </div>
+                </div>
+
+                <div class="form-layout">
+
+                    <div class="panel form-panel">
+
+                        <div class="form-title">
+                            <div class="large-icon">⇄</div>
+                            <div>
+                                <h3>Transfer Details</h3>
+                                <p>Enter recipient information below.</p>
+                            </div>
+                        </div>
+
+                        <form id="transferForm">
+
+                            <label for="recipient">Recipient Name</label>
+                            <input type="text" id="recipient" placeholder="Enter recipient name" required maxlength="60">
+
+                            <label for="accountNumber">Account / Reference Number</label>
+                            <input type="text" id="accountNumber" placeholder="Enter account reference" required maxlength="30">
+
+                            <label for="transferAmount">Transfer Amount (PKR)</label>
+                            <input type="number" id="transferAmount" placeholder="Enter amount" min="1" step="1" required>
+
+                            <label for="transferNote">Description (Optional)</label>
+                            <textarea id="transferNote" placeholder="Write a short note..."></textarea>
+
+                            <button class="primary-btn full-btn" type="submit">
+                                Review Transfer →
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <div class="panel info-panel">
+                        <h3>Account Information</h3>
+
+                        <div class="info-line">
+                            <span>Available Balance</span>
+                            <strong id="transferBalance">Rs. 248,500</strong>
+                        </div>
+
+                        <div class="info-line">
+                            <span>Account Type</span>
+                            <strong>Premium Savings</strong>
+                        </div>
+
+                        <div class="info-line">
+                            <span>Currency</span>
+                            <strong>PKR</strong>
+                        </div>
+
+                        <div class="notice">
+                            This is an educational banking simulation. No actual money will be transferred.
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= TRANSACTIONS ================= -->
+
+            <section class="page" id="transactions">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">ACCOUNT ACTIVITY</p>
+                        <h1>Transaction <span>History</span></h1>
+                        <p class="subtext">View and search all your demo transactions.</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+
+                    <div class="filter-row">
+                        <input type="search" id="transactionSearch" placeholder="Search transactions...">
+
+                        <select id="transactionFilter">
+                            <option value="all">All Transactions</option>
+                            <option value="income">Income Only</option>
+                            <option value="expense">Expenses Only</option>
+                        </select>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>DESCRIPTION</th>
+                                    <th>DATE</th>
+                                    <th>CATEGORY</th>
+                                    <th>AMOUNT</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactionRows"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= BILL PAYMENTS ================= -->
+
+            <section class="page" id="bills">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">EVERYDAY PAYMENTS</p>
+                        <h1>Bill <span>Payments</span></h1>
+                        <p class="subtext">Manage your utility payments in one place.</p>
+                    </div>
+                </div>
+
+                <div class="bill-categories">
+                    <div class="bill-category">
+                        <span>ϟ</span>
+                        <strong>Electricity</strong>
+                        <small>Electricity bills</small>
+                    </div>
+
+                    <div class="bill-category">
+                        <span>♨</span>
+                        <strong>Gas</strong>
+                        <small>Gas bills</small>
+                    </div>
+
+                    <div class="bill-category">
+                        <span>◉</span>
+                        <strong>Internet</strong>
+                        <small>Internet services</small>
+                    </div>
+
+                    <div class="bill-category">
+                        <span>▣</span>
+                        <strong>Water</strong>
+                        <small>Water bills</small>
+                    </div>
+                </div>
+
+                <div class="panel bill-form-panel">
+
+                    <div class="form-title">
+                        <div class="large-icon">▤</div>
+                        <div>
+                            <h3>Pay Your Bill</h3>
+                            <p>Enter the bill information.</p>
+                        </div>
+                    </div>
+
+                    <form id="billForm">
+
+                        <label for="billType">Bill Category</label>
+                        <select id="billType" required>
+                            <option value="">Select bill type</option>
+                            <option value="Electricity">Electricity</option>
+                            <option value="Gas">Gas</option>
+                            <option value="Internet">Internet</option>
+                            <option value="Water">Water</option>
+                        </select>
+
+                        <label for="consumerNumber">Consumer / Reference Number</label>
+                        <input type="text" id="consumerNumber" placeholder="Enter reference number" required maxlength="30">
+
+                        <label for="billAmount">Payment Amount (PKR)</label>
+                        <input type="number" id="billAmount" placeholder="Enter amount" min="1" step="1" required>
+
+                        <button class="primary-btn full-btn" type="submit">
+                            Review Bill Payment →
+                        </button>
+
+                    </form>
+
+                    <div class="notice">
+                        Payments are simulated for project demonstration only.
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= BUDGET PLANNER ================= -->
+
+            <section class="page" id="budgets">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">SMART MONEY MANAGEMENT</p>
+                        <h1>Budget <span>Planner</span></h1>
+                        <p class="subtext">Create spending limits and monitor your expenses.</p>
+                    </div>
+                </div>
+
+                <div class="form-layout">
+
+                    <div class="panel form-panel">
+                        <h3>Create Monthly Budget</h3>
+
+                        <form id="budgetForm">
+
+                            <label for="budgetCategory">Category</label>
+                            <select id="budgetCategory" required>
+                                <option value="">Select category</option>
+                                <option value="Food">Food</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Transport">Transport</option>
+                                <option value="Education">Education</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Healthcare">Healthcare</option>
+                            </select>
+
+                            <label for="budgetLimit">Monthly Budget (PKR)</label>
+                            <input type="number" id="budgetLimit" min="1" step="1" required placeholder="Enter budget limit">
+
+                            <label for="budgetSpent">Amount Already Spent (PKR)</label>
+                            <input type="number" id="budgetSpent" min="0" step="1" required placeholder="Enter spending">
+
+                            <button class="primary-btn full-btn" type="submit">
+                                Save Budget
+                            </button>
+
+                        </form>
+                    </div>
+
+                    <div class="panel info-panel">
+                        <h3>Budgeting Tips</h3>
+
+                        <div class="info-line">
+                            <span>Plan</span>
+                            <strong>Set monthly limits</strong>
+                        </div>
+
+                        <div class="info-line">
+                            <span>Monitor</span>
+                            <strong>Track expenses</strong>
+                        </div>
+
+                        <div class="info-line">
+                            <span>Improve</span>
+                            <strong>Reduce unnecessary costs</strong>
+                        </div>
+
+                        <div class="notice">
+                            Stay within your spending limits to improve your financial habits.
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="section-heading list-heading">
+                    <div>
+                        <h2>Your Monthly Budgets</h2>
+                    </div>
+                </div>
+
+                <div class="budget-grid" id="budgetList"></div>
+
+            </section>
+
+            <!-- ================= SAVINGS GOALS ================= -->
+
+            <section class="page" id="savings">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">BUILD YOUR FINANCIAL FUTURE</p>
+                        <h1>Savings <span>Goals</span></h1>
+                        <p class="subtext">Create goals and monitor your savings progress.</p>
+                    </div>
+                </div>
+
+                <div class="panel form-panel">
+                    <h3>Create a New Savings Goal</h3>
+
+                    <form id="goalForm">
+
+                        <label for="goalName">Goal Name</label>
+                        <input type="text" id="goalName" placeholder="Example: New Laptop" required maxlength="50">
+
+                        <label for="goalTarget">Target Amount (PKR)</label>
+                        <input type="number" id="goalTarget" min="1" step="1" placeholder="Enter target amount" required>
+
+                        <label for="goalSaved">Already Saved (PKR)</label>
+                        <input type="number" id="goalSaved" min="0" step="1" value="0" required>
+
+                        <button class="primary-btn full-btn" type="submit">
+                            + Create Savings Goal
+                        </button>
+
+                    </form>
+                </div>
+
+                <div class="section-heading list-heading">
+                    <div>
+                        <h2>Your Savings Journey</h2>
+                    </div>
+                </div>
+
+                <div class="goal-grid" id="goalList"></div>
+
+            </section>
+
+            <!-- ================= CARDS ================= -->
+
+            <section class="page" id="cards">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR DIGITAL WALLET</p>
+                        <h1>My <span>Cards</span></h1>
+                        <p class="subtext">View and manage your demo debit card.</p>
+                    </div>
+                </div>
+
+                <div class="card-layout">
+
+                    <div class="bank-card" id="bankCard">
+
+                        <div class="card-top">
+                            <div class="card-brand">NOVA<span>BANK</span></div>
+                            <div class="card-chip">▦</div>
+                        </div>
+
+                        <div>
+                            <div class="card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 4821</div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div>
+                                <small>CARD HOLDER</small>
+                                <strong id="cardHolder">DEMO USER</strong>
+                            </div>
+
+                            <div>
+                                <small>EXPIRES</small>
+                                <strong>12/29</strong>
+                            </div>
+
+                            <div class="card-network">◉</div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel card-controls">
+
+                        <h3>Card Management</h3>
+                        <p class="subtext">Manage the status of your demo card.</p>
+
+                        <div class="info-line">
+                            <span>Card Type</span>
+                            <strong>Virtual Debit Card</strong>
+                        </div>
+
+                        <div class="info-line">
+                            <span>Card Number</span>
+                            <strong>•••• 4821</strong>
+                        </div>
+
+                        <div class="info-line">
+                            <span>Card Status</span>
+                            <strong id="cardStatus">Active</strong>
+                        </div>
+
+                        <button class="primary-btn full-btn" id="cardToggle" type="button">
+                            Lock Demo Card
+                        </button>
+
+                        <div class="notice">
+                            This is a fictional card for educational demonstration. It cannot be used for real payments.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= PROFILE ================= -->
+
+            <section class="page" id="profile">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">PERSONAL INFORMATION</p>
+                        <h1>My <span>Profile</span></h1>
+                        <p class="subtext">Manage your demo account details.</p>
+                    </div>
+                </div>
+
+                <div class="panel form-panel">
+
+                    <div class="profile-avatar">DU</div>
+
+                    <h3>Account Information</h3>
+
+                    <form id="profileForm">
+
+                        <label for="profileName">Full Name</label>
+                        <input type="text" id="profileName" required maxlength="60">
+
+                        <label for="profileEmail">Email Address</label>
+                        <input type="email" id="profileEmail" required maxlength="100">
+
+                        <label>Account Type</label>
+                        <input type="text" value="Premium Savings Account" disabled>
+
+                        <button class="primary-btn full-btn" type="submit">
+                            Save Profile Changes
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <span>© 2026 NOVA BANK. All rights reserved.</span>
+                <span>Designed for Digital Financial Management</span>
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+        <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+
+        <div class="modal-icon">✓</div>
+
+        <h2 id="modalTitle">Confirmation</h2>
+
+        <div id="modalBody"></div>
+
+        <div class="modal-buttons" id="modalButtons"></div>
+
+    </div>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
